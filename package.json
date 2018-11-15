@@ -5,6 +5,7 @@
   "repository": "https://github.com/dev-academy-challenges/react-minimal.git",
   "main": "index.js",
   "scripts": {
+    "knex": "knex",
     "start": "node server & webpack --watch"
   },
   "babel": {
@@ -21,7 +22,10 @@
   "license": "ISC",
   "dependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
-    "express": "^4.16.2"
+    "express": "^4.16.2",
+    "knex": "^0.15.2",
+    "nodemon": "^1.18.6",
+    "sqlite3": "^4.0.4"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
