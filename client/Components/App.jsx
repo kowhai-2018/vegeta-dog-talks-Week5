@@ -1,8 +1,12 @@
 import React from 'react'
+import Weather from './weather.jsx'
 
 const App = () => {
   return (
-    <h1>Welcome to Vegeta Dog Commands App </h1>
+    <div>
+      <h1>Welcome to Vegeta Dog Commands App </h1>
+      <Weather />
+    </div>
   )
 }
 
