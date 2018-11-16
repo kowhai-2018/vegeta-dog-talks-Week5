@@ -36,20 +36,16 @@ export default class App extends React.Component {
     return (
       <div>
         <ErrorMessage error={this.state.error} />
-
+        <Weather />
         <h1>Welcome to Vegeta Dog Commands!</h1>
 
         <p>
           <a id='show-widget-link' href='#'
             onClick={this.showAddWidget}>Add Details</a>
         </p>
-
-        {this.state.addWidgetVisible && <AddWidget
+        
+        {this.state.addWidgetVisible && <addVegeta
           refresh={this.refreshList} />}
-
-        {this.state.editWidget && <EditWidget
-          refresh={this.refreshList}
-          widgetId={this.state.editWidget} />}
 
         {this.state.detailsVisible && <WidgetDetails
           deleteWidget={this.deleteWidget}
