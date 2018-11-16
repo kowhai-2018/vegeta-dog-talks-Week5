@@ -1,6 +1,6 @@
 import request from 'superagent'
 
-const widgetUrl = 'http://localhost:3000/api/v1/widgets'
+const widgetUrl = 'http://localhost:3000/api/v1/vegeta'
 
 export function getWidgets () {
   return request
