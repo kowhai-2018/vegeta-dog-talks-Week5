@@ -3,16 +3,15 @@ const config = require('../knexfile.js').development
 const connection = knex(config)
 
 module.exports = {
-    getVegeta,
-    addVegeta
+  getVegeta,
+  addVegeta
 }
 
 function getVegeta (db = connection) {
-    return db('vegeta')
+  return db('vegeta')
 }
 
 function addVegeta (command, name, db = connection) {
-    return db('vegeta')
-      .insert({command: command, name: name})
-  }
-
+  return db('vegeta')
+    .insert({command, name})
+}

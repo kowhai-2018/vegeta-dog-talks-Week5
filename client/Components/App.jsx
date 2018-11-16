@@ -1,57 +1,48 @@
 import React from 'react'
 import Weather from './weather.jsx'
 
-import addVegeta from './addVegeta'
+import AddVegeta from './AddVegeta'
 
 import * as api from '../api'
+import GetVegeta from './GetVegeta.jsx'
 
 export default class App extends React.Component {
-  constructor (props) {
-    super(props)
-
-    this.state = {
+  state = {
       id: '',
       command: '',
       name: '',
       languange: ''
-    }
-
-    this.addVegeta = this.addVegeta.bind(this),
-    this.showAddVegeta = this.showAddVegeta.bind(this)
-
   }
 
   componentDidMount () {
-    this.addVegeta()
+    // addVegeta()
   }
 
   showAddVegeta () {
-    this.setState({
-      addVegetaVisible: true,
-      detailsVisible: false
-    })
+    // setState({
+    //   addVegetaVisible: true,
+    //   detailsVisible: false
+    // })
   }
-  
+
   render () {
     return (
       <div>
-        <ErrorMessage error={this.state.error} />
-        <Weather />
-        <h1>Welcome to Vegeta Dog Commands!</h1>
-
+        {/* <ErrorMessage error={this.state.error} /> */}
+                <h1>Welcome to Vegeta Dog Commands!</h1>
         <p>
-          <a id='show-widget-link' href='#'
-            onClick={this.showAddWidget}>Add Details</a>
+          {/* <a id='show-widget-link' href='#'
+            onClick={this.showAddVegeta}>Add Details</a> */}
         </p>
-        
-        {this.state.addWidgetVisible && <addVegeta
-          refresh={this.refreshList} />}
-
-        {this.state.detailsVisible && <WidgetDetails
+        <GetVegeta />
+        <h2>Add Details</h2>
+        <AddVegeta />
+        <Weather />
+        {/* {this.state.detailsVisible && <WidgetDetails
           deleteWidget={this.deleteWidget}
           hideDetails={this.hideDetails}
           isVisible={this.state.detailsVisible}
-          widget={this.state.activeWidget} />}
+          widget={this.state.activeWidget} />} */}
       </div>
     )
   }

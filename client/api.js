@@ -1,33 +1,23 @@
 import request from 'superagent'
 
-const widgetUrl = 'http://localhost:3000/api/v1/vegeta'
+const vegetaUrl = 'http://localhost:3000/api/v1/vegeta'
 
-export function getWidgets () {
+export function getVegeta () {
   return request
-    .get(widgetUrl)
+    .get(vegetaUrl)
     .then(res => res.body)
 }
 
-export function getWidget (id) {
+export function appendVegeta (details) {
   return request
-    .get(`${widgetUrl}/${id}`)
+    .post(vegetaUrl)
+    .send(details)
     .then(res => res.body)
 }
 
-export function appendWidget (widget) {
+export function addVegeta (command, dogName) {
   return request
-    .post(widgetUrl)
-    .send(widget)
-    .then(res => res.body)
-}
-
-export function deleteWidget (id) {
-  return request
-    .delete(`${widgetUrl}/${id}`)
-}
-
-export function updateWidget (widget) {
-  return request
-    .put(`${widgetUrl}/${widget.id}`)
-    .send(widget)
+    .post(`${vegetaUrl}/`)
+    .send({command, dogName})
+    .then(console.log)
 }
